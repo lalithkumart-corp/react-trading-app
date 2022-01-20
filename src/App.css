@@ -1,7 +1,7 @@
 .App {
   text-align: center;
-  background-color: #0d1b54;
-  color: white;
+  /* background-color: #0d1b54; */
+  /* color: white; */
 }
 
 .App-logo {
@@ -40,20 +40,18 @@
   }
 }
 
-.Mui-selected {
+/* .Mui-selected {
   background-color: #aba9ff !important;
   color: #2e365d !important;
-}
+} */
 .MuiTabs-indicator {
   background: none !important;
 }
-.material-ui-table-header th {
+/* .material-ui-table-header th {
   border-right: 1px solid #e0e0e0 !important;
   background-color: #0d1b54 !important;
-  /* padding: 4px !important; */
 }
 .material-ui-table-body td{
   border-right: 1px solid #e0e0e0 !important;
   color: white;
-  /* padding: 4px !important; */
-}
+} */

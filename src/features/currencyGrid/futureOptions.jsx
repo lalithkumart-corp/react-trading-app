@@ -33,12 +33,12 @@ export default function FutureOptions() {
                 <TableHead className="material-ui-table-header">
                     <TableRow>
                         <TableCell></TableCell>
-                        <TableCell align="center" style={{color: "red"}}>Exp Date</TableCell>
-                        <TableCell align="center" style={{color: "red"}}>ATM</TableCell>
-                        <TableCell align="center" style={{color: "red"}}>25d R/R</TableCell>
-                        <TableCell align="center" style={{color: "red"}}>10d R/R</TableCell>
-                        <TableCell align="center" style={{color: "red"}}>25d B/R</TableCell>
-                        <TableCell align="center" style={{color: "red"}}>10d B/F</TableCell>
+                        <TableCell align="center" color="tableHeader">Exp Date</TableCell>
+                        <TableCell align="center" color="tableHeader">ATM</TableCell>
+                        <TableCell align="center" color="tableHeader">25d R/R</TableCell>
+                        <TableCell align="center" color="tableHeader">10d R/R</TableCell>
+                        <TableCell align="center" color="tableHeader">25d B/R</TableCell>
+                        <TableCell align="center" color="tableHeader">10d B/F</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody className="material-ui-table-body">

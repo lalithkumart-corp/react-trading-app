@@ -6,9 +6,13 @@ import Typography from '@mui/material/Typography';
 import { useState } from 'react';
 import RiskReversal from './riskReversalTable';
 import FutureOptions from './futureOptions';
-import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 // import { Icon } from '@mui/material';
-
+import { useTheme } from '@mui/material/styles';
+import Paper from '@mui/material/Paper';
+import {CurrencySymbols} from './CurrencyToggle.style';
+import {GsCurrencyCard} from './CurrencyGrid.style';
+import GsCard from '../../components/gsCard/gsCard';
+import { GsTabsWrapper } from '../../components/gsTabs/gsTabs.style';
 const CHANNEL_INFO = {
     "event": "subscribe",
     "channel": "trade",
@@ -17,6 +21,9 @@ const CHANNEL_INFO = {
 
 export function CurrencyGrid() {
     const [value, setValue] = useState(0);
+    // let myTheme = useSelector((state) => state.gsTheme.themeName=='dark'?darkTheme:lightTheme);
+
+    const myTheme = useTheme();
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -25,31 +32,37 @@ export function CurrencyGrid() {
     return (
         <Grid container style={{margin: "10px 0 0 10px"}}>
             <Grid item xs={7}>
-                <Typography style={{textAlign: 'left', marginBottom: '15px'}}><KeyboardDoubleArrowRightIcon style={{verticalAlign: "bottom"}}/> <span>Single Currency Grid</span></Typography>
-                <Box>
-                    <Tabs value={value} onChange={handleChange} aria-label="Currency Trade Grid Tabs" style={{minHeight: '10px'}}>
-                        <Tab label="RR/BF Table" style={{padding: '7px', border:'1px solid lightgrey', color: "white", minWidth: '140px', minHeight: '10px'}}/>
-                        <Tab label="Call/Put Table" style={{padding: '7px', border:'1px solid lightgrey', color: "white", minWidth: '140px', minHeight: '10px'}} />
-                        <Tab label="Vol Curve" style={{padding: '7px', border:'1px solid lightgrey', color: "white", minWidth: '140px', minHeight: '10px'}} />
-                        <Tab label="Vol Smile" style={{padding: '7px', border:'1px solid lightgrey', color: "white", minWidth: '140px', minHeight: '10px'}} />
-                        <Tab label="Heatmaps" style={{padding: '7px', border:'1px solid lightgrey', color: "white", minWidth: '140px', minHeight: '10px'}} />
-                    </Tabs>
-                </Box>
-                <TabPanel value={value} index={0}>
-                    <RiskReversal />
-                </TabPanel>
-                <TabPanel value={value} index={1}>
-                    <FutureOptions />
-                </TabPanel>
-                <TabPanel value={value} index={2}>
-                    Volumne Curve Chart 
-                </TabPanel>
-                <TabPanel value={value} index={3}>
-                    Volume Smile
-                </TabPanel>
-                <TabPanel value={value} index={4}>
-                    Heat Maps
-                </TabPanel>
+                {/* <GsCurrencyCard myTheme={myTheme}> */}
+                <GsCard cardHeader="Single Currency Grid" myTheme = {myTheme}>
+                        {/* <p className="currency-grid-header-text">Currency grid</p> */}
+                        <GsTabsWrapper>
+                            <Box>
+                                <Tabs value={value} onChange={handleChange} aria-label="Currency Trade Grid Tabs" style={{minHeight: '10px'}}>
+                                    <Tab label="RR/BF Table" />
+                                    <Tab label="Call/Put Table"  />
+                                    <Tab label="Vol Curve"  />
+                                    <Tab label="Vol Smile"  />
+                                    <Tab label="Heatmaps"  />
+                                </Tabs>
+                            </Box>
+                            <TabPanel value={value} index={0}>
+                                <RiskReversal />
+                            </TabPanel>
+                            <TabPanel value={value} index={1}>
+                                <FutureOptions />
+                            </TabPanel>
+                            <TabPanel value={value} index={2}>
+                                Volumne Curve Chart 
+                            </TabPanel>
+                            <TabPanel value={value} index={3}>
+                                Volume Smile
+                            </TabPanel>
+                            <TabPanel value={value} index={4}>
+                                Heat Maps
+                            </TabPanel>
+                        </GsTabsWrapper>
+                {/* </GsCurrencyCard> */}
+                </GsCard>
             </Grid>
         </Grid>
     )
