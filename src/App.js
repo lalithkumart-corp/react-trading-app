@@ -15,6 +15,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { green, purple } from '@mui/material/colors';
 import { useSelector } from 'react-redux';
 import { GsLayout } from './components/GsLayout';
+import GlobalStyle from './gsGlobalStyles.js';
 
 const darkTheme = createTheme({
   palette: {
@@ -149,15 +150,16 @@ function App() {
 
   let myThemeName = useSelector((state) => state.gsTheme.themeName);
   const theme = getThemeByName(myThemeName);
+
+  // { ThemeProvider }
   return (
     <div className="App">
       
-      {/* <ThemeContext.Provider value={_setThemeName}> */}
         <ThemeProvider theme={theme}>
           <CssBaseline />
+          <GlobalStyle />
           <GsLayout />
         </ThemeProvider>
-      {/* </ThemeContext.Provider> */}
     </div>
   );
 }

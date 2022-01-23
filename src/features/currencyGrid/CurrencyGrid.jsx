@@ -13,6 +13,8 @@ import {CurrencySymbols} from './CurrencyToggle.style';
 import {GsCurrencyCard} from './CurrencyGrid.style';
 import GsCard from '../../components/gsCard/gsCard';
 import { GsTabsWrapper } from '../../components/gsTabs/gsTabs.style';
+import { GsContext } from '../../gsContext.js';
+import { useContext } from 'react';
 const CHANNEL_INFO = {
     "event": "subscribe",
     "channel": "trade",
@@ -20,6 +22,8 @@ const CHANNEL_INFO = {
 };
 
 export function CurrencyGrid() {
+    let tt = useContext(GsContext);
+
     const [value, setValue] = useState(0);
     // let myTheme = useSelector((state) => state.gsTheme.themeName=='dark'?darkTheme:lightTheme);
 
@@ -32,6 +36,7 @@ export function CurrencyGrid() {
     return (
         <Grid container style={{margin: "10px 0 0 10px"}}>
             <Grid item xs={7}>
+                <p>{tt.userName}</p>
                 {/* <GsCurrencyCard myTheme={myTheme}> */}
                 <GsCard cardHeader="Single Currency Grid" myTheme = {myTheme}>
                         {/* <p className="currency-grid-header-text">Currency grid</p> */}

@@ -11,9 +11,10 @@ import List from '@mui/material/List';
 import ListItemText from '@mui/material/ListItemText';
 import ListItem from '@mui/material/ListItem';
 import MenuItem from '@mui/material/MenuItem';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 
 import { Link, NavLink } from 'react-router-dom';
+import {GsContext} from '../../gsContext.js';
 
 // import GsThemeSelectorSmall from '../themeSelectorSmall';
 export default function NavBar() {
@@ -25,6 +26,7 @@ export default function NavBar() {
     const handleClose = () => {
         setAnchorEl(null);
     };
+    const tt = useContext(GsContext);
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static" color="primary">
@@ -74,7 +76,7 @@ export default function NavBar() {
                             aria-expanded={open ? 'true' : undefined}
                             onClick={handleClick}
                         >
-                            Dashboard
+                            Other
                         </Button>
                         <Menu
                             id="basic-menu"
@@ -87,16 +89,16 @@ export default function NavBar() {
                         >
                             <MenuItem 
                                 onClick={handleClose}
-                                component={Link} to="/profile"
+                                component={Link} to="/carrier-analysis"
                                 >
-                                    <ListItemText primary="My Profile" color="gsPrimary"/>
+                                    <ListItemText primary="Carrier Analytics" color="gsPrimary"/>
                                 </MenuItem>
                             <MenuItem onClick={handleClose} component={Link} to="/account">
                                 <ListItemText primary="My Account" />
                             </MenuItem>
                         </Menu>
                     </Box>
-                    <Button color="inherit">Welcom RajKumar</Button>
+                    <Button color="inherit">Welcom {tt.userNameFromCtx}</Button>
                 </Toolbar>
             </AppBar>
         </Box>
