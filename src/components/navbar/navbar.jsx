@@ -93,8 +93,8 @@ export default function NavBar() {
                                 >
                                     <ListItemText primary="Carrier Analytics" color="gsPrimary"/>
                                 </MenuItem>
-                            <MenuItem onClick={handleClose} component={Link} to="/account">
-                                <ListItemText primary="My Account" />
+                            <MenuItem onClick={handleClose} component={Link} to="/help">
+                                <ListItemText primary="Help" />
                             </MenuItem>
                         </Menu>
                     </Box>

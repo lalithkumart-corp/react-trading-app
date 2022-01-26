@@ -21,7 +21,7 @@ const darkTheme = createTheme({
   palette: {
     type: 'dark',
     primary: {
-      main: 'rgb(224, 227, 231)', //whitish
+      main: '#ffffff',//'rgb(224, 227, 231)', //whitish
       tabColor: '#fcfcfd', // whitish
       selectedTabBg: '#aba9ff', // for gsTabs
       selectedTabColor: '#3f51b5' // for gsTabs
@@ -30,7 +30,7 @@ const darkTheme = createTheme({
       main: '#f50057', //red
     },
     background: {
-      default: 'rgb(10, 25, 41)', //violetish
+      default: '#0a1540' // rgb(10, 25, 41)', //violetish
       // paper: '#273052',
     },
     text: {
@@ -53,13 +53,14 @@ const darkTheme = createTheme({
       styleOverrides: {
         root: {
           background: "#11094c",
+          color: '#ffffff'
         }
       }
     },
     MuiPaper: {
       styleOverrides: {
         root: {
-          background: '#11094c'
+          background: '#0d1b54'//'#11094c'
         }
       }
     },
@@ -131,8 +132,8 @@ const lightTheme = createTheme({
 })
 
 const getThemeByName = (themeName) => {
-  if(themeName == 'dark') return darkTheme;
-  else return lightTheme;
+  if(themeName == 'light') return lightTheme;
+  else return darkTheme;
 }
 
 // export const ThemeContext = React.createContext(getThemeByName('darkTheme'));

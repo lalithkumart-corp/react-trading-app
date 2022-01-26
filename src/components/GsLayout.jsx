@@ -4,6 +4,7 @@ import { Grid } from '@mui/material';
 import Login from './Login';
 import NavBar from './navbar/navbar';
 import GsHome from './home';
+import { HelpScreen } from '../features/help/index';
 import { CurrencyGrid } from '../features/currencyGrid/CurrencyGrid';
 import GsThemeSelector from './themeSelector';
 import { AnalyticsPage } from '../features/analytics/index';
@@ -43,6 +44,7 @@ export function GsLayout() {
                                 <Route path="/currency-grid" element={<CurrencyGrid/>} />
                                 <Route path="/theme-setting" element={<GsThemeSelector/>} />
                                 <Route path="/carrier-analysis" element={<AnalyticsPage/>} />
+                                <Route path="/help" element={<HelpScreen />} />
                             </Routes>
                         </main>
                     </Grid>

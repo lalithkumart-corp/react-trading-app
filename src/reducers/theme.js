@@ -63,7 +63,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 
 let initialState = {
-    themeName: 'light',
+    themeName: 'dark',
     // theme: lightTheme
 }
 
